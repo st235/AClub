@@ -13,7 +13,7 @@ public class UnionFind<T> {
     private final Map<T, Integer> sizes = new HashMap<>();
 
     @NotNull
-    T parent(@NotNull T node) {
+    public T parent(@NotNull T node) {
         if (!parents.containsKey(node) || parents.get(node).equals(node)) {
             parents.putIfAbsent(node, node);
             return node;
@@ -23,7 +23,7 @@ public class UnionFind<T> {
         return parents.get(node);
     }
 
-    boolean union(@NotNull T one, @NotNull T another) {
+    public boolean union(@NotNull T one, @NotNull T another) {
         T oneParent = parent(one);
         T anotherParent = parent(another);
 
